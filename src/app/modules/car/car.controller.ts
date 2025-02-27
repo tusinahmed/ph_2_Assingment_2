@@ -104,11 +104,39 @@ const CarUpdateIDWise = async (req: Request, res: Response) => {
 };
 
 
+//delte
+
+
+const CarUpdateIDelet = async (req: Request, res: Response) => {
+  try {
+    const { carId }   = req.params; // ✅ Use 'carId' to match the route
+    
+
+    const result = await ServiceDB.CarIdWiseCarDelet(carId); // Pass both carId and updateData
+    console.log("result", result);
+
+    res.send({
+      message: "Car updated successfully", // Corrected message
+      success: true,
+      data: {},
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send({
+      message: "Failed to update car",
+      success: false,
+      error: err,
+    });
+  }
+};
+
+
+
 
 export const CarController = {
   CarCreate,
   CarGetAll,
   CarGETidWise,
   CarUpdateIDWise,
-
+  CarUpdateIDelet,
 };

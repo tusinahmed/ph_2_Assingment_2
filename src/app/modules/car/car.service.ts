@@ -79,6 +79,21 @@ const CarIdWiseCarUpdate = async (carId: string, updateData: Partial<Car>) => {
 //cardelete 
 
 
+const CarIdWiseCarDelet = async (carId: string) => {
+  try {
+    const result = await car_Model.CarModel.findByIdAndDelete(carId); // Use findByIdAndDelete
+    console.log("service", result);
+
+    if (!result) {
+      throw new Error("Car not found");
+    }
+
+    return result;
+  } catch (err) {
+    console.log(err);
+    throw err; // Re-throw the error to be handled by the controller
+  }
+};
 
 
 
@@ -87,5 +102,5 @@ export const ServiceDB = {
   CarGetAll,
   CarIdWiseCar,
   CarIdWiseCarUpdate,
- 
+  CarIdWiseCarDelet,
 }; 
