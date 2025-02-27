@@ -1,0 +1,39 @@
+# Node.js modules
+node_modules/
+/node_modules
+
+# IDE specific files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Environment configuration file
+.env
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# Compiled files
+dist/
+build/
+tmp/
+out/
+
+# Temporary files
+*~
+\#*
+*.swp
+
+# Other
+/coverage
