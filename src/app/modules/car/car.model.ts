@@ -11,9 +11,9 @@ const CarSchema = new Schema({
   description: { type: String, required: true },
   quantity: { type: Number, required: true, min: 0 },
   inStock: { type: Boolean, required: true },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now },
-});
+  // createdAt: { type: Date, default: Date.now },
+  // updatedAt: { type: Date, default: Date.now },
+}, {timestamps:true});
 
 const CarModel = mongoose.model('Car', CarSchema);
 
